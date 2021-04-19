@@ -28,8 +28,10 @@ class Arm : public frc2::SubsystemBase {
 
   void Grab();
   void Release();
-  void Tilt();
+  void TiltUp();
+  void TiltDn();
   void Lift();
+  void Lower();
 
  private:
 

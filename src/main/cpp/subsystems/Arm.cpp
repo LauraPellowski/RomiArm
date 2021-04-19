@@ -14,10 +14,6 @@ void Arm::Grab() {
     printf("Arm::Grab\n");
     grip.Set(1.0); // "Full Left"?
     printf("grip position: %f\n",grip.GetRaw());
-//    wrist.Set(0.0);
-//    wrist.SetRaw(2400);
-//   shoulder.Set(0.0);
-//    shoulder.SetRaw(2400);
 }
 
 // Open grip
@@ -25,16 +21,20 @@ void Arm::Release() {
     grip.Set(0.0); 
     printf("Arm::Release\n");
     printf("grip position: %f\n",grip.GetRaw());
-//    wrist.Set(1.0);
-//    wrist.SetRaw(600);
-//    shoulder.Set(1.0);
-//    shoulder.SetRaw(600);
 }
 
-void Arm::Tilt() {
+void Arm::TiltUp() {
+    wrist.Set(1.0);
+}
 
+void Arm::TiltDn() {
+    wrist.Set(0.0);
 }
 
 void Arm::Lift() {
+    shoulder.Set(1.0);
+}
 
+void Arm::Lower() {
+    shoulder.Set(0.0);
 }
