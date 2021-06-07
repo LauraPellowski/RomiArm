@@ -22,6 +22,7 @@ void Grab::Execute() {
 // Called once the command ends or is interrupted.
 void Grab::End(bool interrupted) {
   printf("Command->Grab Interrupted\n");
+  m_arm->Stop();
 }
 
 // Returns true when the command should end.

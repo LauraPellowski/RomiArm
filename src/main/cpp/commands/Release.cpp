@@ -22,6 +22,7 @@ void Release::Execute() {
 // Called once the command ends or is interrupted.
 void Release::End(bool interrupted) {
   printf("Command->Release Interrupted\n");
+  m_arm->Stop();
 }
 
 // Returns true when the command should end.

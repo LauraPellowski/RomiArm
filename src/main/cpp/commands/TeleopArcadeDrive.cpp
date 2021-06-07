@@ -16,5 +16,6 @@ TeleopArcadeDrive::TeleopArcadeDrive(
 }
 
 void TeleopArcadeDrive::Execute() {
+  // Added third argument to ArcadDrive(): squareInputs true or false
   m_drive->ArcadeDrive(m_xaxisSpeedSupplier(), m_zaxisRotateSupplier());
 }

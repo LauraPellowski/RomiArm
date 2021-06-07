@@ -12,15 +12,21 @@ void Arm::Periodic() {}
 // Close grip
 void Arm::Grab() {
     printf("Arm::Grab\n");
-    grip.Set(1.0); // "Full Left"?
-    printf("grip position: %f\n",grip.GetRaw());
+    //grip.Set(1.0); // "Full Left"?
+    grip.Set(0.2); // "Full Left"?
+    //printf("grip position: %f\n",grip.GetRaw());
 }
 
 // Open grip
 void Arm::Release() { 
-    grip.Set(0.0); 
+    //grip.Set(0.0); 
     printf("Arm::Release\n");
-    printf("grip position: %f\n",grip.GetRaw());
+    grip.Set(0.75); 
+    //printf("grip position: %f\n",grip.GetRaw());
+}
+
+void Arm::Stop() {
+    grip.Set(0.5);
 }
 
 void Arm::TiltUp() {

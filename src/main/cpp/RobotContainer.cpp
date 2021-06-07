@@ -17,13 +17,13 @@ RobotContainer::RobotContainer() {
 
 void RobotContainer::ConfigureButtonBindings() {
 
-  frc2::Button([this] {return m_controller.GetRawButton(1); }).WhileHeld(new Grab(&m_arm));
-  frc2::Button([this] {return m_controller.GetRawButton(2); }).WhileHeld(new Release(&m_arm));
+  frc2::Button([this] {return m_controller.GetRawButton(5); }).WhileHeld(new Grab(&m_arm));
+  frc2::Button([this] {return m_controller.GetRawButton(6); }).WhileHeld(new Release(&m_arm));
  
   // Also set default commands here
   m_drive.SetDefaultCommand(TeleopArcadeDrive(
-      &m_drive, [this] { return -m_controller.GetRawAxis(1); },
-      [this] { return m_controller.GetRawAxis(2); }));
+      &m_drive, [this] { return m_controller.GetRawAxis(1); },
+      [this] { return m_controller.GetRawAxis(4); }));
 
   // Example of how to use the onboard IO
   m_onboardButtonA.WhenPressed(frc2::PrintCommand("Button A Pressed"))
