@@ -17,7 +17,7 @@ auto m_distance = 80_in;
 auto m_angle = 45_deg;
 auto m_time = 20_s;
 
-
+// :)
 // NOTE:  Consider using this command inline, rather than writing a subclass.
 // For more information, see:
 // https://docs.wpilib.org/en/stable/docs/software/commandbased/convenience-features.html
