@@ -10,7 +10,7 @@
 
 #include "commands/TeleopArcadeDrive.h"
 
-RobotContainer::RobotContainer() {
+RobotContainer::RobotContainer() : m_autodrive(&m_drive, &m_arm) {
   // Configure the button bindings
   ConfigureButtonBindings();
 }
@@ -30,12 +30,12 @@ void RobotContainer::ConfigureButtonBindings() {
       .WhenReleased(frc2::PrintCommand("Button A Released"));
 
   // Setup SmartDashboard options.
-  m_chooser.SetDefaultOption("Mondrian Map", &m_autoMondrian);
-  m_chooser.AddOption("Auto Routine Distance", &m_autoDistance);
-  m_chooser.AddOption("Auto Routine Time", &m_autoTime);
+  // m_chooser.SetDefaultOption("Mondrian Map", &m_autoMondrian);
+  // m_chooser.AddOption("Auto Routine Distance", &m_autoDistance);
+  // m_chooser.AddOption("Auto Routine Time", &m_autoTime);
   frc::SmartDashboard::PutData("Auto Selector", &m_chooser);
 }
 
 frc2::Command* RobotContainer::GetAutonomousCommand() {
-  return m_chooser.GetSelected();
+  return &m_autodrive;
 }

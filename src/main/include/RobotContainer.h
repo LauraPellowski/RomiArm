@@ -10,11 +10,9 @@
 #include <frc2/command/button/Button.h>
 
 #include "Constants.h"
-#include "commands/AutonomousDistance.h"
-#include "commands/AutonomousMondrian.h"
-#include "commands/AutonomousTime.h"
 #include "commands/Grab.h"
 #include "commands/Release.h"
+#include "commands/AutoDrive.h"
 #include "subsystems/Drivetrain.h"
 #include "subsystems/OnBoardIO.h"
 #include "subsystems/Arm.h"
@@ -59,9 +57,7 @@ class RobotContainer {
       [this] { return m_onboardIO.GetButtonAPressed(); }};
 
   // Autonomous commands.
-  AutonomousMondrian m_autoMondrian{&m_drive};
-  AutonomousDistance m_autoDistance{&m_drive};
-  AutonomousTime m_autoTime{&m_drive};
+  AutoDrive m_autodrive;
 
   void ConfigureButtonBindings();
 };
