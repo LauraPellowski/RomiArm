@@ -12,9 +12,9 @@
 #include <units/time.h>
 #include <units/length.h>
 
-double m_speed = 1.0;
-auto m_distance = 80_in;
-auto m_angle = 45_deg;
+double m_speed = 0.6;
+auto m_distance = 70_in;
+auto m_angle = 20_deg;
 auto m_time = 20_s;
 
 // :)
@@ -64,8 +64,8 @@ AddCommands(
 frc2::ParallelDeadlineGroup{
   Delay(m_time),
   frc2::SequentialCommandGroup{
-    frc2::ParallelDeadlineGroup{ Grab(arm), 
-      frc2::SequentialCommandGroup{ DriveDistance(m_speed, m_distance, m_drive), TurnDegrees(m_speed, m_angle, m_drive)},
-    Release(arm)}}}
+    frc2::ParallelDeadlineGroup{ frc2::SequentialCommandGroup{ DriveDistance(m_speed, m_distance, m_drive), TurnDegrees(m_speed, m_angle, m_drive)},
+      Grab(arm) },
+    Release(arm)}}
   );
 }

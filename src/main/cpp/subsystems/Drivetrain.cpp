@@ -27,7 +27,7 @@ void Drivetrain::Periodic() {
 }
 
 void Drivetrain::ArcadeDrive(double xaxisSpeed, double zaxisRotate) {
-  m_drive.ArcadeDrive(xaxisSpeed, zaxisRotate, true);
+  m_drive.ArcadeDrive(-xaxisSpeed, zaxisRotate, true);
   //m_drive.CurvatureDrive(xaxisSpeed, zaxisRotate, false);
 }
 
